@@ -29,7 +29,11 @@ export class RecipesListComponent implements OnInit {
     "Classico dolce italiano con caffè e mascarpone",
     "https://www.milanocittastato.it/wp-content/uploads/2020/08/la-ricetta-classica-del-tiramisu-con-uova-savoiardi-e-mascarpone-1920x1080-1.jpg")
   ]
-  constructor() { }
+
+  selectedRecipe: RecipeModel;
+  constructor() {
+    this.selectedRecipe=this.recipes[0];
+  }
 
   ngOnInit(): void {
   }
