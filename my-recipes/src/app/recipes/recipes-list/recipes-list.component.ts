@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RecipeModel } from '../../models/recipe.model';
 
 @Component({
@@ -7,8 +7,9 @@ import { RecipeModel } from '../../models/recipe.model';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit {
+  @Input() recipe: RecipeModel;
 
-  recipes:RecipeModel[]=[
+  recipes :RecipeModel[]=[
     new RecipeModel(
       "Spaghetti alla chitarra",
       "Un particolare tipo di pasta che...",
