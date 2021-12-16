@@ -9,10 +9,10 @@ import { RecipeModel } from '../../models/recipe.model';
 export class RecipesListComponent implements OnInit {
   @Input() recipe: RecipeModel;
 
-  
+
   selectedRecipe: RecipeModel;
   constructor() {
-    this.selectedRecipe=this.recipes[0];
+    //this.selectedRecipe=this.recipes[0];
   }
 
   ngOnInit(): void {
