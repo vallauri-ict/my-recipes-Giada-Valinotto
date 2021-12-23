@@ -15,14 +15,10 @@ export class RecipeListComponent implements OnInit {
   @Output() recipeSelectedInList = new EventEmitter<DataStorageService>()
 
   constructor(private recipeservice:RecipeService) {
+    
    }
 
   ngOnInit(): void {
     this.recipeservice.getRecipes();
   }
-
-  onRecipeSelected(recipe:DataStorageService){
-    this.recipeSelectedInList.emit(recipe);
-  }
-
 }
