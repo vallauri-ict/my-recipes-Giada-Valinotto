@@ -41,4 +41,26 @@ export class ShoppingListService {
   addIngredients(ingredients:IngredientModel[]){
     this.ingredients.push(...ingredients);
   }
+
+  postIngredient(ingredient: IngredientModel){
+    this.dataStorageService.sendPostRequest("shopping-list", ingredient).subscribe(
+      (succ)=> {
+        console.log(succ);
+      },
+      (err)=>{
+        console.log(err);
+      }
+    );
+  }
+
+  patchIngredient(ingredient: IngredientModel){
+    this.dataStorageService.sendPatchRequest("shopping-list", ingredient).subscribe(
+       (succ)=> {
+        console.log(succ);
+      },
+      (err)=>{
+        console.log(err);
+      }
+    )
+  }
 }
