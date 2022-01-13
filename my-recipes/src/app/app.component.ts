@@ -3,15 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'my-recipes';
-  loadedFeature:string="recipes" 
+  loadedFeature: string = 'recipe';
 
-
-  onNavigate(feature:string){
-    console.log(feature)
-    this.loadedFeature=feature
-  }
+  changeFeature = (feature: string) => {
+    this.loadedFeature = feature;
+  };
 }

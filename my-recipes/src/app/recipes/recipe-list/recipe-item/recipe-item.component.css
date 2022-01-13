@@ -1,3 +1,9 @@
-.pull-left{
-    max-width: 72%;
+img {
+  max-height: 50px;
+}
+p {
+  width: 80%;
+}
+.pull-left {
+  max-width: 72%;
 }
