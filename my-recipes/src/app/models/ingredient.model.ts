@@ -1,10 +1,10 @@
 export class IngredientModel {
-  _id: number;
-  name: string;
-  amount: number;
+    public id: number;
+    public name: string;
+    public amount: number;
 
-  constructor(name: string, amount: number) {
-    this.name = name;
-    this.amount = amount;
-  }
+    constructor(name: string, amount: number) {
+        this.name = name;
+        this.amount = amount;
+    }
 }

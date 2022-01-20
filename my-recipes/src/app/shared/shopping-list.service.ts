@@ -1,44 +1,48 @@
 import { Injectable } from '@angular/core';
-import { IngredientModel } from '../models/ingredient.model';
 import { DataStorageService } from './data-storage.service';
+import { IngredientModel } from '../models/ingredient.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingListService {
   ingredients: IngredientModel[] = [];
+
   constructor(private dataStorageService: DataStorageService) {}
 
-  getIngredients = () => {
+  getIngredients() {
     this.dataStorageService.sendGetRequest('shopping-list').subscribe(
-      (data) => (this.ingredients = data as IngredientModel[]),
-      (err) => console.error(err)
+      (data) => {
+        this.ingredients = data as IngredientModel[];
+      },
+      (error) => {
+        console.error(error);
+      }
     );
-  };
+  }
 
-  addIngredient = (ingredient: IngredientModel) => {
-    let data =
-      this.ingredients.find(
-        (aus) => aus.name.toUpperCase() === ingredient.name.toUpperCase()
-      ) ?? null;
-    if (!data) {
+  addIngredient(ingredient: IngredientModel) {
+    let ingredientFound = false;
+    for (let item of this.ingredients) {
+      if (item.name.toLowerCase() == ingredient.name.toLowerCase()) {
+        ingredientFound = true;
+        item.amount += ingredient.amount;
+        this.patchIngredient({ amount: item.amount }, item.id);
+        break;
+      }
+    }
+    if (!ingredientFound) {
       this.ingredients.push(ingredient);
       this.postIngredient(ingredient);
-    } else {
-      this.ingredients.map((aus) => {
-        if (aus.name.toUpperCase() === ingredient.name.toUpperCase()) {
-          aus.amount += ingredient.amount;
-
-          this.patchIngredient({ amount: aus.amount }, aus._id);
-        }
-      });
     }
-  };
+  }
 
-  addIngredients = (ingredients: IngredientModel[]) => {
+  addIngredients(ingredients: IngredientModel[]) {
     // this.ingredients.push(...ingredients);
-    ingredients.map((ingr) => this.addIngredient(ingr));
-  };
+    for (const ingredient of ingredients) {
+      this.addIngredient(ingredient);
+    }
+  }
 
   postIngredient = (ingredient: IngredientModel) => {
     this.dataStorageService
@@ -53,7 +57,8 @@ export class ShoppingListService {
         }
       );
   };
-  patchIngredient = (data: object, id: number) => {
+
+  patchIngredient = (data: any, id: number) => {
     this.dataStorageService
       .sendPatchtRequest('shopping-list/' + id, data)
       .subscribe(

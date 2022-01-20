@@ -1,15 +1,15 @@
 import { IngredientModel } from './ingredient.model';
 
 export class RecipeModel {
-  ID: number;
-  name: string;
-  description: string;
-  imagePath: string;
-  ingredients: IngredientModel[];
+    public _id: string;
+    public name: string;
+    public description: string;
+    public imagePath: string;
+    public ingredients: IngredientModel[];
 
-  constructor(name: string, desc: string, img: string) {
-    this.name = name;
-    this.description = desc;
-    this.imagePath = img;
-  }
+    constructor(name: string, desc: string, img: string) {
+        this.name = name;
+        this.description = desc;
+        this.imagePath = img;
+    }
 }
