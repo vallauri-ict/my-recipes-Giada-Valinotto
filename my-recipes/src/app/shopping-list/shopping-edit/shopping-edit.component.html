@@ -1,24 +1,44 @@
-<br><br>
+<br /><br />
 <div class="row">
-    <div class="col-xs-12">
-        <form>
-            <div class="row">
-                <div class="col-sm-5 form-group">
-                    <label for="name">Name</label>
-                    <input id="name" type="text" class="form-control" [(ngModel)]="ingredientName" [ngModelOptions]="{standalone: true}">
-                </div>
-                <div class="col-sm-2 form-group">
-                    <label for="amount">Amount</label>
-                    <input id="amount" type="number" class="form-control" [(ngModel)]="ingredientAmount" [ngModelOptions]="{standalone: true}">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button type="button" class="btn btn-success" (click)="addIngredient()" [disabled]="!ingredientName">Add</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-primary" (click)="clearList()">Clear</button>
-                </div>
-            </div>
-        </form>
-    </div>
+  <div class="col-xs-12">
+    <form action="">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            [(ngModel)]="name"
+          />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="amount"></label>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            class="form-control"
+            [(ngModel)]="amount"
+            min="1"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="addIngredient()"
+            [disabled]="!name || amount < 1"
+          >
+            Add
+          </button>
+          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-primary" (click)="clearList()">Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
