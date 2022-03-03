@@ -3,26 +3,124 @@
     {
       "id": 1,
       "name": "Spaghetti alla chitarra",
-      "description": "Un particolare tipo di pasta che...",
-      "imagePath": "https://i.kym-cdn.com/entries/icons/original/000/033/701/PTSD_Chihuahua_Banner.jpg"
+      "description": "Un particolare tipo di pasta che ...",
+      "imagePath": "https://images.lacucinaitaliana.it/wp-content/uploads/2020/06/03204258/Pasta-alla-chitarra-con-ragu-di-polo.jpg",
+      "ingredients": [
+        {
+          "name": "Farina",
+          "amount": 100
+        },
+        {
+          "name": "Acqua",
+          "amount": 250
+        },
+        {
+          "name": "Pomodoro",
+          "amount": 50
+        },
+        {
+          "name": "Sale",
+          "amount": 10
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Lasagne alla bolognese",
-      "description": "Pasta emiliana molto calorica sempre presente nei pranzi domenicali...",
-      "imagePath": "https://www.gustissimo.it/articoli/ricette/lasagne-cannelloni/lasagna-senza-besciamella.jpeg"
+      "description": "Pasta emiliana molto calorica sempre presente nei pranzi domenicali ...",
+      "imagePath": "https://www.tribugolosa.com/uploads/media/lasagne-alla-bolognese-hem1.jpg?1389133420",
+      "ingredients": [
+        {
+          "name": "Lasagne",
+          "amount": 50
+        },
+        {
+          "name": "Pomodoro",
+          "amount": 60
+        },
+        {
+          "name": "Besciamella",
+          "amount": 100
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "Gnocchi ai formaggi",
-      "description": "Raviole Val Varaita",
-      "imagePath": "https://www.vapropi.it/wp-content/uploads/2019/09/SC.G101.01.jpg"
+      "name": "Ravioles al Formaggio",
+      "description": "Ottimi soprattutto in Val Varaita nella variante Ravioles...",
+      "imagePath": "https://media-cdn.tripadvisor.com/media/photo-s/14/b1/37/d3/ravioles-della-valle.jpg",
+      "ingredients": [
+        {
+          "name": "Ravioles",
+          "amount": 150
+        },
+        {
+          "name": "Formaggio",
+          "amount": 40
+        }
+      ]
     },
     {
       "id": 4,
-      "name": "Tiramisu",
-      "description": "Con tipico mascarpone ",
-      "imagePath": "https://www.trevisotoday.it/~media/horizontal-hi/44494491491566/tiramisu-pavesini-2.jpg"
+      "name": "Tiramisù",
+      "description": "Classico dolce italiano con mascarpone ...",
+      "imagePath": "https://toscanedigusto.com/wp-content/uploads/2019/09/maxresdefault.jpg",
+      "ingredients": [
+        {
+          "name": "Cacao",
+          "amount": 30
+        },
+        {
+          "name": "Mascarpone",
+          "amount": 250
+        },
+        {
+          "name": "Savoiardi",
+          "amount": 30
+        }
+      ]
+    }
+  ],
+  "shopping-list": [
+    {
+      "name": "Patate",
+      "amount": 5,
+      "id": 1
+    },
+    {
+      "name": "Pomodoro",
+      "amount": 10,
+      "id": 2
+    },
+    {
+      "name": "Carote",
+      "amount": 25,
+      "id": 3
+    },
+    {
+      "name": "Ravioles",
+      "amount": 150,
+      "id": 4
+    },
+    {
+      "name": "Formaggio",
+      "amount": 40,
+      "id": 5
+    },
+    {
+      "name": "Pummarola",
+      "amount": 100,
+      "id": 6
+    },
+    {
+      "name": "Ravioles",
+      "amount": 150,
+      "id": 7
+    },
+    {
+      "name": "Formaggio",
+      "amount": 40,
+      "id": 8
     }
   ]
 }
